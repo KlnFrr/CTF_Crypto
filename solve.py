@@ -18,7 +18,6 @@ plaintext2 = bytes(plaintext2_list)
 
 print(plaintext2.decode(errors="replace"))
 
-
 plaintext3_list = []
 for i, c in enumerate(c3[:len(keystream)]):
     plaintext3_list.append(c ^ keystream[i])
@@ -26,22 +25,24 @@ plaintext3 = bytes(plaintext3_list)
 
 print(plaintext3.decode())
 
-known_plaintext1 = (
-    b"An author never does more damage to his readers than "
-    b"when he hides a difficulty."
-)
+known_plaintext2 = b"An author never does more damage to his readers than when he hides a difficulty."
 
-keystream = bytes(a ^ b for a, b in zip(c2, known_plaintext1))
-plaintext2 = bytes(
-    c ^ keystream[i]
-    for i, c in enumerate(c2[:len(keystream)])
-)
+long_keystream_list = []
+for i, c in enumerate(c2[:len(known_plaintext2)]):
+    long_keystream_list.append(c ^ known_plaintext2[i])
+
+long_keystream = bytes(long_keystream_list)
+
+plaintext2_list = []
+for i, c in enumerate(c2[:len(long_keystream)]):
+    plaintext2_list.append(c ^ long_keystream[i])
+plaintext2 = bytes(plaintext2_list)
 
 print(plaintext2.decode(errors="replace"))
 
-plaintext3 = bytes(
-    c ^ keystream[i]
-    for i, c in enumerate(c3[:len(keystream)])
-)
+plaintext3_list = []
+for i, c in enumerate(c3[:len(long_keystream)]):
+    plaintext3_list.append(c ^ long_keystream[i])
+plaintext3 = bytes(plaintext3_list)
 
 print(plaintext3.decode(errors="replace"))
