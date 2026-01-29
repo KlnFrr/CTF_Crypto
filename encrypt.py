@@ -6,9 +6,9 @@ key = b"GALOIS_1811_1832"
 nonce = b"2026CTF!"
 
 messages = [
-    b"Lettre de Galois a Auguste Chevalier, 1832.\n",
-    b"An author never does more damage to his readers than when he hides a difficulty.\n",
-    b"Tu y es presque, le flag est : FLAG{d6a7906a0450158d0682d1a96d48de28}\n"
+    b"Lettre de Galois a Auguste Chevalier, 1832.",
+    b"An author never does more damage to his readers than when he hides a difficulty.",
+    b"Tu y es presque, le flag est : FLAG{d6a7906a0450158d0682d1a96d48de28}"
 ]
 
 def encrypt(plaintext):

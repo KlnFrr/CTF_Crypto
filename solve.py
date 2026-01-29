@@ -4,7 +4,7 @@ c1 = bytes.fromhex("3e7355c9b4b5541961c42adf2e1b5ba3d803e10a52836c075870a1704c22
 c2 = bytes.fromhex("337801dcb3a41c1276c403db341140f09c0da438078976064935e5524926fc079c43574178fc09eb6dae312cdf0cc54b204db3fa71de7e11709f0115ee3fd307ad2f0a98a4c813dffe8e614b7e00107a64")
 c3 = bytes.fromhex("266301c4e6b5075d749608cd330157fcd80ea46b418878130c70f247047dbb24f0767f1a74a31bfc26fb66298a4a835b6510eaf0619f2e467a8e0849f8338e5bac3918c1f9a6")
 
-plaintext1 = b"Lettre de Galois a Auguste Chevalier, 1832.\n"
+plaintext1 = b"Lettre de Galois a Auguste Chevalier, 1832."
 
 keystream_list = []
 for a, b in zip(c1, plaintext1):
